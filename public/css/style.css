@@ -41,6 +41,7 @@ header h1{
     border-right: 2px solid #000;
     min-height: 500px;
     background: rgba(255,255,255,0.6);
+    overflow: auto;
 }
 #rightDiv{
     border:none;
@@ -65,8 +66,10 @@ header h1{
     cursor: pointer;
     padding:5px 0;
     text-decoration: none;
+    float: left;
 }
 .notesTitle:hover{
+    padding: 5px 10px;
     background: rgb(252, 143, 143);
 }
 .noteTitle{
@@ -84,4 +87,12 @@ header h1{
     /* text-align: start; */
     background: transparent;
 
+}
+.clear{
+    clear: both;
+}
+
+.deleteIconClass{
+    float: right;
+    color:red;
 }

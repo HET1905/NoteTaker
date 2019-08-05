@@ -39,16 +39,15 @@ router.get('/api/notes', (req, res) => {
 });
 
 router.post('/api/notes',(req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     connection.query(`INSERT INTO notes(title,body) values(?,?)`,[req.body.title,req.body.body],(err,result)=>{
         if(err){
             console.log(`Error in inserting data in table ${err}`);
-        }else
-        {
-            res.send(true);
-            // res.redirect("/api/notes");
         }
-
+            // res.send(true);
+            res.redirect('/');  
+        
+        
     });
     
 });

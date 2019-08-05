@@ -64,11 +64,16 @@
 
                     let noteDiv = $('<div>');
                     let noteTitle = $('<h4>');
+                    let iconSpan = $('<span>');
+                    let clearDiv = $('<div>');
                     noteTitle.attr('id', 'note' + i);
                     noteDiv.attr('class', 'notesDiv');
                     noteTitle.attr('class', 'notesTitle');
                     noteTitle.attr('href', data[i].body);
                     noteTitle.text(data[i].title);
+                    iconSpan.attr('class','deleteIconClass');
+                    iconSpan.html('<i class="fa fa-trash"></i>');
+                    clearDiv.attr('class','clear');
                     noteTitle.on('click',
                         function () {
                             $('.noteTitle').val(data[i].title);
@@ -79,7 +84,7 @@
                         });
 
                     $('.saveBtn').hide();
-                    noteDiv.append(noteTitle);
+                    noteDiv.append(noteTitle,iconSpan,clearDiv);
                     $('#leftDiv').append(noteDiv);
                 }
 
@@ -90,8 +95,10 @@
             $('.saveBtn').show();
             $('.noteTitle').prop('readonly', false);
             $('.notesArea').prop('readonly', false);
-            $('.noteTitle').text();
-            $('.notesArea').text();
+            $('.noteTitle').val('');
+            $('.notesArea').val('');
+            $('.noteTitle').attr('placeholder','Note Title');
+            $('.notesArea').attr('placeholder','Notes');
         });
 
         $('.saveBtn').on('click', function () {
@@ -107,9 +114,10 @@
             console.log(newNote);
 
             $.post('/api/notes', newNote, (data) => {
-                if (data == true) {
-                    alert("Notes added to table");
-                }
+                // if (data == true) {
+                //     alert("Notes added to table");
+                // }
+                loadData();
             });
 
            
