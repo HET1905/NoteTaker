@@ -52,4 +52,17 @@ router.post('/api/notes',(req,res)=>{
     
 });
 
+router.delete('/api/notes/:id', function(req, res) {
+    connection.query("DELETE FROM notes WHERE id = ?", [req.params.id], function(err, result) {
+      if (err) {
+        // If an error occurred, send a generic server failure
+        return res.status(500).end();
+      }
+     
+      res.status(200).end();
+  
+    });
+  });
+  
+
 module.exports = router;

@@ -96,3 +96,7 @@ header h1{
     float: right;
     color:red;
 }
+
+.deleteIconClass:hover{
+    color:rgb(100, 12, 12);
+}
