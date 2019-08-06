@@ -18,3 +18,13 @@
 * To add notes click on pencil icon and type your notes and title and save it.
 * The page refresh when you add or delete the notes.
 
+## Image of NoteTaker App
+![NoteTakerApp](https://github.com/HET1905/NoteTaker/blob/master/public/images/noteTaker.png "Note Taker")
+
+
+## License
+Designed and developed by Hetal Patel
+
+MIT © [Hetal Patel]()
+
+
