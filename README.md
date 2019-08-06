@@ -2,7 +2,7 @@
     
     Note Taker app is Node, Express and Mysql app to create notes and save notes.
 
-    Url : https://blooming-taiga-75274.herokuapp.com/
+    https://blooming-taiga-75274.herokuapp.com/
 
 ## Technology used
 

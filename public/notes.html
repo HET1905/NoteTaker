@@ -26,8 +26,8 @@
                 </div>
                 <div class="col-12 col-sm-4">
                     <div class="icons text-right">
-                        <i class="fa fa-save saveBtn"></i>
-                        <i class="fa fa-pencil newBtn"></i>
+                        <i class="fa fa-save saveBtn" data-toggle="tooltip" title="Save Note"></i>
+                        <i class="fa fa-pencil newBtn" data-toggle="tooltip" title="New Note"></i>
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@
 
                 </div>
                 <div class="col-12 col-sm-7" id='rightDiv'>
-                    <input type="text" placeholder='Note Title' class="noteTitle" />
-                    <textarea placeholder='Your notes' class="notesArea"></textarea>
+                    <input type="text" placeholder='Note Title..Click on New to create new notes' class="noteTitle" />
+                    <textarea placeholder='Your notes...Click on New to create new notes' class="notesArea"></textarea>
                 </div>
             </div>
 
@@ -53,12 +53,13 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <script>
-        // $('#btnGetStarted').on('click', function () {
-        //     alert('on click');
-        // })
+               
+        $('[data-toggle="tooltip"]').tooltip;   
+       
         function loadData() {
             $('.noteTitle').prop('readonly', true);
             $('.notesArea').prop('readonly', true);
+
             $.get('/api/notes', function (data) {
                 console.log(data);
 
@@ -147,6 +148,8 @@
         });
 
         loadData();
+
+        // $('[data-toggle="tooltip"]').tooltip();   
     </script>
 
 </body>
