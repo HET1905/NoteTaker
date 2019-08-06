@@ -1,24 +1,24 @@
 var path = require("path");
 var mysql = require('mysql');
 var router = require('express').Router();
-// var con = require('./connection.js');
+var connection = require('./connection.js');
 
-const connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "password",
-    database: "notetaker_db"
-});
+// const connection = mysql.createConnection({
+//     host: "localhost",
+//     port: 3306,
+//     user: "root",
+//     password: "password",
+//     database: "notetaker_db"
+// });
 
-// Initiate MySQL Connection.
-connection.connect(function (err) {
-    if (err) {
-        console.error(`error connecting: ${ err.stack}`);
-        return;
-    }
-    console.log(`connected as id  ${connection.threadId}`);
-});
+// // Initiate MySQL Connection.
+// connection.connect(function (err) {
+//     if (err) {
+//         console.error(`error connecting: ${ err.stack}`);
+//         return;
+//     }
+//     console.log(`connected as id  ${connection.threadId}`);
+// });
 
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '../public/index.html'));
